@@ -1,0 +1,30 @@
+; (function(module) {
+  "use strict";
+  module.exports.isArray = function(obj) {
+    var results = [];
+
+    results.push(Array.isArray.apply(this, arguments));
+
+    ['basic-utils', 'core-util-is', 'doublescore', 'lodash', 'underscore',
+     'is-array', 'typechecker', 'is-check', 'is-native-type',
+     'is_', 'is_array', 'is_js', 'isthis', 'jistype', 'jqb-isarray', 'mutype', 
+     'node-native', 'robb', 'tool', 'type-predicates', 'type-is', 'typ', 'typechecker',
+     'typedas', 'typeof-ext', 'typeverifier', 'utilx', 'x-is-array', 'xo-utils', 'youtil'
+    ].forEach(function(moduleName) {
+      try {
+        results.push(require(moduleName).isArray.apply(this, arguments));
+      } catch(ex) {
+        console.log(moduleName);
+        console.log(ex);
+      }
+    });
+
+    ['formula-isarray', 'lodash.isarray', 'validate.io-array'].forEach(function(moduleName) {
+      results.push(require(moduleName).apply(this, arguments));
+    });
+
+    return results.reduce(function(lhs, rhs) {
+      return lhs || rhs;
+    });
+  };
+})(module);
