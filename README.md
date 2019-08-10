@@ -22,7 +22,7 @@ But polyfills.
 
 ### I think I need an adult or a drink
 
-I know a guy with the initials "lm" who can help
+I know someone with the initials "lm" who can help.
 
 ## Reading this readme was a mistake
 
